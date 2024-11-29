@@ -1,10 +1,18 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
 import TabBar from "../../components/TabBar";
+import CustomHeader from "../../components/CustomHeader";
 
 export default function TabLayout() {
   return (
-    <Tabs tabBar={(props) => <TabBar {...props} />}>
+    <Tabs
+      tabBar={(props) => <TabBar {...props} />}
+      screenOptions={{
+        headerShown: true,
+        header: (props) => <CustomHeader {...props} />,
+      }}
+      initialRouteName="game"
+    >
       <Tabs.Screen
         name="register"
         options={{
