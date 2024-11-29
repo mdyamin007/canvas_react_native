@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text } from "react-native";
 
 const Rank = () => {
   return (
     <View>
-      <Text>Rank</Text>
+      <Text className="color-red-500">Rank</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Rank
+export default Rank;

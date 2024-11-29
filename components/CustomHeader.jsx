@@ -8,7 +8,7 @@ const CustomHeader = (props) => {
     <>
       <SafeAreaView>
         <View>
-          <Text>CustomHeader</Text>
+          <Text className="text-red-500">CustomHeader</Text>
         </View>
       </SafeAreaView>
       <StatusBar backgroundColor="black" style="light" />
