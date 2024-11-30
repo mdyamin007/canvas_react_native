@@ -22,12 +22,8 @@ export default function Tab() {
           <Entypo name="chevron-down" size={24} color="black" />
         </View>
       </View>
-      <View
-        style={{
-          borderBottomColor: "gray",
-          borderBottomWidth: StyleSheet.hairlineWidth,
-        }}
-      />
+      <View className="h-[1px] bg-gray-200 w-full" />
+
       {/* Game Category */}
       <View className="flex flex-row">
         <TouchableOpacity className="bg-white border border-[#145E94] rounded-full px-4 py-2 flex-row items-center mx-6 my-4">
@@ -36,12 +32,16 @@ export default function Tab() {
       </View>
 
       {/* Game List */}
-      <MatchCard />
-      <MatchCard />
-      <MatchCard />
-      <MatchCard />
-      <MatchCard />
-      <MatchCard />
+      <View className="mx-4">
+        <MatchCard />
+        <MatchCard />
+        <MatchCard />
+        <MatchCard />
+        <MatchCard />
+        <MatchCard />
+      </View>
+
+      <View className="h-24"></View>
     </ScrollView>
   );
 }

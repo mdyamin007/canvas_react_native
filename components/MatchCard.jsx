@@ -6,7 +6,7 @@ import GradientButton from "./GradientButton";
 
 const MatchCard = () => {
   return (
-    <View className="bg-white rounded-lg shadow-lg m-4">
+    <View className="bg-white rounded-lg shadow-lg my-4">
       <View className="p-4 relative">
         {/* Location and Court */}
         <Text className="text-[#145E94] font-bold">
