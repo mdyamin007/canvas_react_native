@@ -6,6 +6,7 @@ import { StatusBar } from "expo-status-bar";
 const CustomHeader = (props) => {
   return (
     <>
+      <StatusBar backgroundColor="black" style="light" />
       <SafeAreaView>
         <View className="bg-black p-4">
           <View className="flex-row items-center mx-4">
@@ -22,7 +23,6 @@ const CustomHeader = (props) => {
           </View>
         </View>
       </SafeAreaView>
-      <StatusBar backgroundColor="black" style="light" />
     </>
   );
 };
