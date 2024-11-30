@@ -26,7 +26,7 @@ function MyTabBar({ state, descriptors, navigation }) {
   };
 
   return (
-    <View style={styles.tabbar}>
+    <View className="absolute bottom-0 flex-row justify-between items-center bg-black py-3">
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label =
@@ -60,7 +60,7 @@ function MyTabBar({ state, descriptors, navigation }) {
         return (
           <PlatformPressable
             key={route.key}
-            style={styles.tabbarItem}
+            className="flex-1 justify-center items-center"
             href={buildHref(route.name, route.params)}
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -78,29 +78,5 @@ function MyTabBar({ state, descriptors, navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  tabbar: {
-    position: "absolute",
-    bottom: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "black",
-    paddingVertical: 15,
-    marginHorizontal: 20,
-    borderRadius: 25,
-    borderCurve: "continuous",
-    shadowColor: "black",
-    shadowOffset: { width: 0, height: 10 },
-    shadowRadius: 10,
-    shadowOpacity: 0.1,
-  },
-  tabbarItem: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
 
 export default MyTabBar;
