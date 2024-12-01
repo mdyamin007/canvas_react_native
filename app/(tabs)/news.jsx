@@ -53,11 +53,9 @@ export default function News() {
       <View className="h-[1px] bg-gray-200 w-full my-4" />
 
       {/* List of Posts */}
-      <FlatList
-        data={posts}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View className="flex-row items-center mb-4 mt-2">
+      {posts &&
+        posts.map((item) => (
+          <View key={item.id} className="flex-row items-center mb-4 mt-2">
             <View className="flex-1">
               <Text className="text-sm font-bold text-[#145E94]">
                 {item.type}
@@ -84,13 +82,11 @@ export default function News() {
               resizeMode="cover"
             />
           </View>
-        )}
-        showsVerticalScrollIndicator={false}
-      />
+        ))}
 
       <View className="h-[1px] bg-gray-200 w-full my-4" />
 
-      <MatchCard />
+      <MatchCard link="/chat/1" />
 
       <SystemMessageCard />
 

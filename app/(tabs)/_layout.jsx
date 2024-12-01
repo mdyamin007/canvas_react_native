@@ -11,7 +11,7 @@ export default function TabLayout() {
         headerShown: true,
         header: (props) => <CustomHeader {...props} />,
       }}
-      initialRouteName="game"
+      initialRouteName="index"
     >
       <Tabs.Screen
         name="register"
@@ -23,7 +23,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="game"
+        name="index"
         options={{
           title: "Game board",
           tabBarIcon: ({ color }) => (

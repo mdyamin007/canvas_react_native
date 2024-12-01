@@ -3,11 +3,12 @@ import { View, Text, Image } from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import { SvgUri } from "react-native-svg";
 import GradientButton from "./GradientButton";
+import { router } from "expo-router";
 
-const MatchCard = () => {
+const MatchCard = ({ link }) => {
   return (
-    <View className="bg-white rounded-lg shadow-lg my-4">
-      <View className="p-4 relative">
+    <View className="bg-white rounded-lg shadow-lg my-4 overflow-hidden">
+      <View className="p-4">
         {/* Location and Court */}
         <Text className="text-[#145E94] font-bold">
           Yarkon Park, Tel Aviv | Court #2
@@ -76,8 +77,8 @@ const MatchCard = () => {
             <View className="flex-row gap-2">
               {[1, 2].map((_, index) => (
                 <View key={index} className="items-center">
-                  <View className="w-16 h-16 rounded-full border-2 border-dashed border-blue-400 items-center justify-center">
-                    <Text className="text-2xl text-blue-400">+</Text>
+                  <View className="w-16 h-16 rounded-full border-2 border-dashed border-[#145E94] items-center justify-center">
+                    <Text className="text-2xl text-[#145E94]">+</Text>
                   </View>
                   <Text className="text-sm text-gray-400 mt-1">player</Text>
                   <Text className="text-xs text-gray-400">(nickname)</Text>
@@ -94,9 +95,9 @@ const MatchCard = () => {
         />
       </View>
 
-      <View className="flex-row justify-between">
+      <View className="flex-row justify-between items-end">
         {/* Weather Info */}
-        <View className="space-y-2 mb-4 ml-4">
+        <View className="space-y-2 mb-4 ml-4 flex-1">
           <View className="flex-row items-center">
             <Text className="text-gray-500">💧 25% Precipitation</Text>
           </View>
@@ -106,7 +107,15 @@ const MatchCard = () => {
         </View>
 
         {/* Chat Button */}
-        <GradientButton title="Chat" colors={["#34506D", "#3498DB"]} />
+        <View className="flex-shrink-0">
+          <GradientButton
+            onPress={() => {
+              router.push(link);
+            }}
+            title="Chat"
+            colors={["#34506D", "#3498DB"]}
+          />
+        </View>
       </View>
     </View>
   );

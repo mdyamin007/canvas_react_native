@@ -14,7 +14,7 @@ function MyTabBar({ state, descriptors, navigation }) {
     register: (props) => (
       <Ionicons name="tennisball-outline" size={24} color="black" {...props} />
     ),
-    game: (props) => (
+    index: (props) => (
       <AntDesign name="calendar" size={24} color="black" {...props} />
     ),
     rank: (props) => (
